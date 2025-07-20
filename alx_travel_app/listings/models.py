@@ -16,9 +16,6 @@ class Listing(models.Model):
     host = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return self.title
-
 
 class Booking(models.Model):
 
@@ -70,6 +67,6 @@ class Review(models.Model):
 
     def __str__(self):
 
-        return f"{self.user_id.first_name} gave \
+        return f"{self.user_id.username} gave \
             {self.property_id.title} \
                 {self.rating}"
