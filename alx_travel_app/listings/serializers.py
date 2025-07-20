@@ -6,7 +6,7 @@ class ListingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Listing
-        fields = ["title", "description", "price_per_night", "host"]
+        fields = "__all__"
 
     def validate_price_per_night(self, value):
         if value <= 0:
